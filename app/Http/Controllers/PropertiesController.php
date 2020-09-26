@@ -20,7 +20,7 @@ class PropertiesController extends Controller
     }
 
     public function showProperties() {
-      $properties = new Properties();dmin
+      $properties = new Properties();
       return view('properties',['properties' => $properties->all()]);
     }
 
@@ -61,9 +61,9 @@ class PropertiesController extends Controller
            $property->description = $request->description;
            $property->img = $fileName;
            $property->save();
-        }
 
-        return redirect('/properties');
+           return $request;
+        }
     }
 
     /**use Illuminate\Http\Request;
