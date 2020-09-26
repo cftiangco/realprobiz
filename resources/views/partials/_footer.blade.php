@@ -23,7 +23,7 @@
         <div class="mb-4">
           <h2 class="footer-heading mb-4">Subscribe Newsletter</h2>
         <form action="#" method="post" class="footer-subscribe">
-          <div class="input-group mb-3">
+          <div class="input-group mb-3">/public/storage/uploads/
             <input type="text" class="form-control border-secondary text-white bg-transparent" placeholder="Enter Email" aria-label="Enter Email" aria-describedby="button-addon2">
             <div class="input-group-append">
               <button class="btn btn-primary text-black" type="button" id="button-addon2">Send</button>
@@ -48,7 +48,7 @@
         <div class="border-top pt-5">
         <p class="copyright">
         <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-        Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart text-danger" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank" >Colorlib</a>
+        Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | Real Pro Biz
         <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
         </p>
         </div>
