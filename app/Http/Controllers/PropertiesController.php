@@ -20,7 +20,7 @@ class PropertiesController extends Controller
     }
 
     public function showProperties() {
-      $properties = new Properties();
+      $properties = new Properties();dmin
       return view('properties',['properties' => $properties->all()]);
     }
 
@@ -62,7 +62,7 @@ class PropertiesController extends Controller
            $property->img = $fileName;
            $property->save();
 
-           return $request;
+           return redirect('/properties');
         }
     }
 
@@ -75,7 +75,7 @@ class PropertiesController extends Controller
     public function show(Properties $properties,$id)
     {
         return view('show',['properties' => $properties->findOrFail($id) ]);
-    }
+    }dmin
 
     /**
      * Show the form for editing the specified resource.
