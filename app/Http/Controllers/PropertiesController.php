@@ -61,9 +61,9 @@ class PropertiesController extends Controller
            $property->description = $request->description;
            $property->img = $fileName;
            $property->save();
-
-           return redirect('/properties');
         }
+
+        return redirect('/properties');
     }
 
     /**use Illuminate\Http\Request;
@@ -75,7 +75,7 @@ class PropertiesController extends Controller
     public function show(Properties $properties,$id)
     {
         return view('show',['properties' => $properties->findOrFail($id) ]);
-    }dmin
+    }
 
     /**
      * Show the form for editing the specified resource.
