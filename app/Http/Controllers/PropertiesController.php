@@ -62,7 +62,7 @@ class PropertiesController extends Controller
            $property->img = $fileName;
            $property->save();
 
-           return $request;
+           return redirect('/properties');
         }
     }
 
