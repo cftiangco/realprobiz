@@ -33,7 +33,7 @@
                   <div class="card-body">
                     <h5 class="card-title">Content Option</h5>
                     <p class="card-text">You can modify your page content in this page including email</p>
-                    <a href="#" class="btn btn-primary">Go To Content Option</a>
+                    <a href="/contents" class="btn btn-primary">Go To Content Option</a>
                   </div>
                 </div>
               </div>
