@@ -3,7 +3,23 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PropertiesController;
 use App\Http\Controllers\ListController;
+use Illuminate\Http\Request;
 
+
+
+/* SEND EMAIL */
+Route::get('/sendmail',function(Request $request) {
+  $details = [
+    'subject' => $request->subject,
+    'fullname' => $request->fname . ' ' . $request->lname,
+    'email' => $request->email,
+    'subject' => $request->subject,
+    'message' => $request->message
+  ];
+
+  \Mail::to('myhealthclinicph@gmail.com')->send(new \App\Mail\ProBizMail($details));
+  return 'Email has been send';
+});
 
 /* INDEX PROPERTIES */
 Route::get('/',[PropertiesController::class, 'index']);
@@ -23,5 +39,3 @@ Route::post('/properties/{id}/lists/create/',[ListController::class, 'store']);
 Route::get('/properties/lists/{pid}/edit/{lid}',[ListController::class, 'edit']);
 Route::put('/properties/lists/{pid}/edit/{lid}',[ListController::class, 'update']);
 Route::delete('/properties/{pid}/lists/{lid}/delete',[ListController::class, 'destroy']);
-
-

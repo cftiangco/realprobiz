@@ -12,7 +12,13 @@ class PropertiesController extends Controller
     public function index()
     {
       $properties = new Properties();
-      return view('index',['properties' => $properties->all()]);
+      $navs = [
+        'home' => '#home-section',
+        'properties' => '#properties-section',
+        'about' => '#about-section',
+        'contacts' => '#contact-section'
+      ];
+      return view('index',['properties' => $properties->all(),'navs' => $navs]);
     }
 
     public function showProperties() {
@@ -40,10 +46,18 @@ class PropertiesController extends Controller
 
     public function show(Properties $properties,$id)
     {
+          $navs = [
+            'home' => '/',
+            'properties' => '/',
+            'about' => '/',
+            'contacts' => '/'
+          ];
+
           return view('show',
           [
             'property' => $properties->findOrFail($id),
-            'lists' => Lists::where('property_id',$id)->get()
+            'lists' => Lists::where('property_id',$id)->get(),
+            'navs' => $navs
           ]);
     }
 

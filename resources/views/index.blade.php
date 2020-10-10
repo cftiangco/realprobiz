@@ -84,7 +84,9 @@
                     <div class="ftco-media-1-inner">
                       <a href="/properties/{{ $property->id }}" class="d-inline-block mb-4"><img height="520" src="{{ $property->img }}" alt="FImageo" class="img-fluid"></a>
                       <div class="ftco-media-details">
-                        <h3>{{ $property->name }}</h3>
+                        <h3>{{ $property->name }}</h3>PH
+1
+
                         <p>{{ substr($property->description,0,60) }}...</p>
                         <strong>P{{ $property->price }}</strong>
                       </div>
@@ -105,7 +107,9 @@
 
               <div class="owl-carousel slide-one-item with-dots">
                   @foreach($properties as $property)
-                    <div><img src="{{ $property->img }}" alt="{{ $property->name }}" class="img-fluid"></div>
+                    <a href="/properties/{{ $property->id }}">
+                      <div><img src="{{ $property->img }}" alt="{{ $property->name }}" class="img-fluid"></div>
+                    </a>
                   @endforeach
               </div>
 
@@ -113,15 +117,16 @@
           <div class="col-lg-6 ml-auto">
 
             <h2 class="section-title mb-3">Real Pro Biz</h2>
-                <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                <p>Est qui eos quasi ratione nostrum excepturi id recusandae fugit omnis ullam pariatur itaque nisi voluptas impedit  Quo suscipit omnis iste velit maxime.</p>
+                <p>
+                  Deluxe Condominium Rental within National Capital Region (NCR) Locations: Makati Mandaluyong Ortigas Center Manila (Adriatico Street) Manila (J. Bocobo Street) Quezon City (Aurora Blvd cor Hemady Street) Quezon City (Aurora Blvd cor Gilmore Street)
+                </p>
 
                 <ul class="list-unstyled ul-check success">
-                  <li>Placeat maxime animi minus</li>
-                  <li>Dolore qui placeat maxime</li>
-                  <li>Consectetur adipisicing</li>
-                  <li>Lorem ipsum dolor</li>
-                  <li>Placeat molestias animi</li>
+                  <li>Perfect For The Growing Family</li>
+                  <li>Huge Family Home in Quiet Position</li>
+                  <li>Live In The Lap Of Luxury</li>
+                  <li>Style, Class and Sophistication</li>
+                  <li>Private, Easy-Care Lifestyle</li>
                 </ul>
 
                 <p><a href="#" class="btn btn-primary mr-2 mb-2">Learn More</a></p>
@@ -143,18 +148,18 @@
 
 
 
-            <form action="#" class="p-5 bg-white">
-
+            <form class="p-5 bg-white" method="GET" action="/sendmail">
+              @csrf
               <h2 class="h4 text-black mb-5">Get In Touch</h2>
 
               <div class="row form-group">
                 <div class="col-md-6 mb-3 mb-md-0">
                   <label class="text-black" for="fname">First Name</label>
-                  <input type="text" id="fname" class="form-control">
+                  <input type="text" id="fname" class="form-control" name="fname">
                 </div>
                 <div class="col-md-6">
                   <label class="text-black" for="lname">Last Name</label>
-                  <input type="text" id="lname" class="form-control">
+                  <input type="text" id="lname" class="form-control" name="lname">
                 </div>
               </div>
 
@@ -162,7 +167,7 @@
 
                 <div class="col-md-12">
                   <label class="text-black" for="email">Email</label>
-                  <input type="email" id="email" class="form-control">
+                  <input type="email" id="email" class="form-control" name="email">
                 </div>
               </div>
 
@@ -170,7 +175,7 @@
 
                 <div class="col-md-12">
                   <label class="text-black" for="subject">Subject</label>
-                  <input type="subject" id="subject" class="form-control">
+                  <input type="subject" id="subject" class="form-control" name="subject">
                 </div>
               </div>
 
@@ -205,7 +210,7 @@
               <p class="mb-4"><a href="#">+6329855676 (Landline )</a></p>
 
               <p class="mb-0 font-weight-bold">Email Address</p>
-              <p class="mb-0"><a href="#">youremail@domain.com</a></p>
+              <p class="mb-0"><a href="#">realpro.biz@gmail.com</a></p>
 
             </div>
 

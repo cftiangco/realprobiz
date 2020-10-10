@@ -11,10 +11,10 @@
         <nav class="site-navigation position-relative text-right" role="navigation">
 
           <ul class="site-menu main-menu js-clone-nav mr-auto d-none d-lg-block">
-            <li><a href="#home-section" class="nav-link">Home</a></li>
-            <li><a href="#properties-section" class="nav-link">Properties</a></li>
-            <li><a href="#about-section" class="nav-link">About</a></li>
-            <li><a href="#contact-section" class="nav-link">Contact</a></li>
+            <li><a href="{{ $navs['home'] }}" class="nav-link">Homes</a></li>
+            <li><a href="{{ $navs['properties'] }}" class="nav-link">Properties</a></li>
+            <li><a href="{{ $navs['about'] }}" class="nav-link">About</a></li>
+            <li><a href="{{ $navs['contacts'] }}" class="nav-link">Contact</a></li>
           </ul>
         </nav>
       </div>
