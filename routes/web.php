@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PropertiesController;
 use App\Http\Controllers\ListController;
 use App\Http\Controllers\ContentController;
+use App\Contents;
 use Illuminate\Http\Request;
 
 
@@ -18,7 +19,9 @@ Route::get('/sendmail',function(Request $request) {
     'message' => $request->message
   ];
 
-  \Mail::to('myhealthclinicph@gmail.com')->send(new \App\Mail\ProBizMail($details));
+  $content = Contents::first();
+
+  \Mail::to($content->email_us)->send(new \App\Mail\ProBizMail($details));
   return 'Email has been send';
 });
 

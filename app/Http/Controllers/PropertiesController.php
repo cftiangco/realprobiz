@@ -39,6 +39,14 @@ class PropertiesController extends Controller
 
     public function store(Request $request)
     {
+      $request->validate([
+          'name' => ['required'],
+          'location' => ['required'],
+          'price' => ['required'],
+          'description' => ['required'],
+          'image' => ['required']
+      ]);
+
         $property = new Properties();
         $property->name = $request->name;
         $property->location = $request->location;

@@ -17,6 +17,17 @@ class ContentController extends Controller
     }
 
     public function update(Request $request,Contents $contents) {
+
+      $request->validate([
+          'headline' => 'required',
+          'sub_headline' => 'required',
+          'description_list' => 'required',
+          'contact_us' => 'required',
+          'about_us' => 'required',
+          'email_us' => 'required',
+          'address' => 'required',
+      ]);
+      
       $content = $contents->find($request->id);
       $content->headline = $request->headline;
       $content->sub_headline = $request->sub_headline;

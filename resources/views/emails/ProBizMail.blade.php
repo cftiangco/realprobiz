@@ -10,7 +10,7 @@
     <p>Email: {{ $details['email'] }}</p>
 
     <h4>Subject {{ $details['subject'] }}</h4>
-    <h5>Message</h5>
+    <h3>Message</h3>
     <div>
       {{ $details['message'] }}
     </div>

@@ -25,6 +25,10 @@ class ListController extends Controller
 
     public function store(Request $request,$id)
     {
+        $request->validate([
+            'image' => 'required',
+            'order' => 'required',
+        ]);
         $list = new Lists();
         $list->img = $request->image;
         $list->order = $request->order;
@@ -46,6 +50,11 @@ class ListController extends Controller
 
     public function update(Request $request, Lists $lists,$pid,$lid)
     {
+        $request->validate([
+            'image' => 'required',
+            'order' => 'required',
+        ]);
+
         $list = $lists->find($lid);
         $list->img = $request->image;
         $list->order = $request->order;

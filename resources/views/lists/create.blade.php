@@ -13,12 +13,12 @@
         @csrf
       <div class="form-group">
          <label for="image">Image URL</label>
-         <input type="text" class="form-control" id="image" placeholder="URL" name="image">
+         <input type="text" class="form-control" id="image" placeholder="URL" name="image" required>
        </div>
 
       <div class="form-group">
         <label for="order">List Order</label>
-        <input type="number" class="form-control" id="order" placeholder="0" name="order">
+        <input type="number" class="form-control" id="order" placeholder="0" name="order" required>
       </div>
 
         <button type="submit" class="btn btn-primary">Save</button>

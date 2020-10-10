@@ -13,27 +13,27 @@
         @csrf
       <div class="form-group">
          <label for="name">Property Name</label>
-         <input type="text" class="form-control" id="name" placeholder="Name" name="name">
+         <input type="text" class="form-control" id="name" placeholder="Name" name="name" required>
        </div>
 
       <div class="form-group">
         <label for="location">Location</label>
-        <input type="text" class="form-control" id="location" placeholder="Location" name="location">
+        <input type="text" class="form-control" id="location" placeholder="Location" name="location" required>
       </div>
 
       <div class="form-group">
        <label for="price">Price</label>
-       <input type="text" class="form-control" id="price" placeholder="Price" value="0.0" name="price">
+       <input type="text" class="form-control" id="price" placeholder="Price" value="0.0" name="price" required>
      </div>
 
       <div class="form-group">
         <label for="description">Description</label>
-        <textarea class="form-control" id="description" rows="3" name="description"></textarea>
+        <textarea class="form-control" id="description" rows="3" name="description" required></textarea>
       </div>
 
       <div class="form-group">
        <label for="image">Display Image</label>
-       <input type="text" class="form-control" id="image" placeholder="Image URL" name="image">
+       <input type="text" class="form-control" id="image" placeholder="Image URL" name="image" required>
      </div>
 
      <button type="submit" class="btn btn-primary">Save</button>
