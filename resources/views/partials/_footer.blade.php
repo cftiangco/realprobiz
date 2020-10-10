@@ -5,7 +5,7 @@
         <div class="row">
           <div class="col-md-5">
             <h2 class="footer-heading mb-4">About Us</h2>
-            <p>{{$content->about_us}}</p>
+            <p>{{ $content->about_us }}</p>
           </div>
           <div class="col-md-3 mx-auto">
             <h2 class="footer-heading mb-4">Quick Links</h2>

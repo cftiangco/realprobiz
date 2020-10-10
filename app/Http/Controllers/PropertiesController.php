@@ -28,7 +28,9 @@ class PropertiesController extends Controller
 
     public function showProperties() {
       $properties = new Properties();
-      return view('properties',['properties' => $properties->all()]);
+      return view('properties',[
+        'properties' => $properties->all()
+      ]);
     }
 
     public function create(Request $request)
@@ -70,7 +72,8 @@ class PropertiesController extends Controller
           [
             'property' => $properties->findOrFail($id),
             'lists' => Lists::where('property_id',$id)->get(),
-            'navs' => $navs
+            'navs' => $navs,
+            'content' => Contents::first()
           ]);
     }
 
