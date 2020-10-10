@@ -7,6 +7,11 @@ use Illuminate\Http\Request;
 
 class ListController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function index($id)
     {
         $lists = Lists::where('property_id',$id)->orderBy('order')->get();

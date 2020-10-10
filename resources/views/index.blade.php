@@ -39,10 +39,8 @@
         <div class="container">
           <div class="row align-items-center justify-content-center">
             <div class="col-md-6 mt-lg-5 text-center">
-              <h1 class="text-shadow">Rent &amp; Buy Property Here</h1>
-              <p class="mb-5 text-shadow">
-                “There is no satisfaction, no greater gratification, than that you receive when you close on the purchase of your own home.”
-              </p>
+              <h1 class="text-shadow">{{ $content->headline }}</h1>
+              <p class="mb-5 text-shadow">{{$content->sub_headline}}</p>
               <p><a href="#properties-section" class="btn btn-primary px-5 py-3">Get Started</a></p>
             </div>
           </div>
@@ -50,19 +48,15 @@
 
 
       </div>
-
       <div class="site-blocks-cover overlay overlay-2" style="background-image: url({{ asset('warehouse/images/robinsons-back.jpg') }});" data-aos="fade" id="home-section">
 
 
         <div class="container">
           <div class="row align-items-center justify-content-center">
             <div class="col-md-6 mt-lg-5 text-center">
-              <h1 class="text-shadow">Find Your Perfect Property For Your Home</h1>
-              <p class="mb-5 text-shadow">
-                “There is no satisfaction, no greater gratification, than that you receive when you close on the purchase of your own home.”
-              </p>
+              <h1 class="text-shadow">{{ $content->headline }}</h1>
+              <p class="mb-5 text-shadow"> {{$content->sub_headline}} </p>
               <p><a href="#properties-section" class="btn btn-primary px-5 py-3">Get Started</a></p>
-
             </div>
           </div>
         </div>
@@ -74,7 +68,7 @@
   </div>
 
 
-  <div class="site-section" id="properties-section">
+  <div class="site-section" id="properties-section">3
       <div class="container">
         <div class="row large-gutters">
 
@@ -92,7 +86,7 @@
                       </div>
                     </div>
                   </div>
-                </div>
+                </div>R
             @endforeach
 
         </div>
@@ -117,16 +111,16 @@
           <div class="col-lg-6 ml-auto">
 
             <h2 class="section-title mb-3">Real Pro Biz</h2>
-                <p>
-                  Deluxe Condominium Rental within National Capital Region (NCR) Locations: Makati Mandaluyong Ortigas Center Manila (Adriatico Street) Manila (J. Bocobo Street) Quezon City (Aurora Blvd cor Hemady Street) Quezon City (Aurora Blvd cor Gilmore Street)
-                </p>
+                <p>{{ $content->about_us }}</p>
 
                 <ul class="list-unstyled ul-check success">
-                  <li>Perfect For The Growing Family</li>
-                  <li>Huge Family Home in Quiet Position</li>
-                  <li>Live In The Lap Of Luxury</li>
-                  <li>Style, Class and Sophistication</li>
-                  <li>Private, Easy-Care Lifestyle</li>
+                  @php
+                    $lists = explode(',',$content->description_list);
+                  @endphp
+
+                  @foreach($lists as $list)
+                    <li>{{ $list }}</li>
+                  @endforeach
                 </ul>
 
                 <p><a href="#" class="btn btn-primary mr-2 mb-2">Learn More</a></p>
@@ -199,18 +193,18 @@
 
             <div class="p-4 mb-3 bg-white">
               <p class="mb-0 font-weight-bold">Address</p>
-              <p class="mb-4">Manila, Philippines</p>
+              <p class="mb-4">{{ $content->address }}</p>
 
               <p class="mb-0 font-weight-bold">Phone</p>
-              <p class="mb-4"><a href="#">+639171838585 (Globe)</a></p>
-              <p class="mb-4"><a href="#">+639178852323 (Globe)</a></p>
-              <p class="mb-4"><a href="#">+63955-875-8303</a></p>
-              <p class="mb-4"><a href="#">+639153588061 (Globe)</a></p>
-              <p class="mb-4"><a href="#">+649212817522 (Smart)</a></p>
-              <p class="mb-4"><a href="#">+6329855676 (Landline )</a></p>
+              @php
+                $contacts = explode(',',$content->contact_us);
+              @endphp
 
+              @foreach($contacts as $contact)
+                <p class="mb-4"><a href="#">{{ $contact }}</a></p>
+              @endforeach
               <p class="mb-0 font-weight-bold">Email Address</p>
-              <p class="mb-0"><a href="#">realpro.biz@gmail.com</a></p>
+              <p class="mb-0"><a href="#">{{ $content->email_us }}</a></p>
 
             </div>
 

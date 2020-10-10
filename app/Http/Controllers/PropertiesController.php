@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Properties;
 use App\Lists;
+use App\Contents;
 use Illuminate\Http\Request;
 use File;
 
@@ -18,7 +19,11 @@ class PropertiesController extends Controller
         'about' => '#about-section',
         'contacts' => '#contact-section'
       ];
-      return view('index',['properties' => $properties->all(),'navs' => $navs]);
+      return view('index',[
+        'properties' => $properties->all(),
+        'navs' => $navs,
+        'content' => Contents::first()
+      ]);
     }
 
     public function showProperties() {

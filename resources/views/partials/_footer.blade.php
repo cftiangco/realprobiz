@@ -5,15 +5,13 @@
         <div class="row">
           <div class="col-md-5">
             <h2 class="footer-heading mb-4">About Us</h2>
-            <p>
-              Deluxe Condominium Rental within National Capital Region (NCR) Locations: Makati Mandaluyong Ortigas Center Manila (Adriatico Street) Manila (J. Bocobo Street) Quezon City (Aurora Blvd cor Hemady Street) Quezon City (Aurora Blvd cor Gilmore Street)
-            </p>
+            <p>{{$content->about_us}}</p>
           </div>
           <div class="col-md-3 mx-auto">
             <h2 class="footer-heading mb-4">Quick Links</h2>
             <ul class="list-unstyled">
               <li><a href="#">About Us</a></li>
-              <li><a href="#">Services</a></li>
+              <!-- <li><a href="#">Services</a></li> -->
               <!-- <li><a href="#">Testimonials</a></li> -->
               <li><a href="#">Contact Us</a></li>
             </ul>

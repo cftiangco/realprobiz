@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PropertiesController;
 use App\Http\Controllers\ListController;
+use App\Http\Controllers\ContentController;
 use Illuminate\Http\Request;
 
 
@@ -21,10 +22,14 @@ Route::get('/sendmail',function(Request $request) {
   return 'Email has been send';
 });
 
+/* CONTENTS */
+Route::get('/contents',[ContentController::class, 'index']);
+Route::put('/contents',[ContentController::class, 'update']);
+
 /* INDEX PROPERTIES */
 Route::get('/',[PropertiesController::class, 'index']);
 Route::get('/new',[PropertiesController::class, 'create']);
-Route::get('/properties', [PropertiesController::class, 'showProperties']);
+Route::get('/properties', [PropertiesController::class, 'showProperties'])->middleware('auth');
 Route::post('/properties', [PropertiesController::class, 'store']);
 Route::get('/properties/{id}', [PropertiesController::class, 'show']);
 Route::get('/properties/edit/{id}', [PropertiesController::class, 'edit']);
@@ -39,3 +44,7 @@ Route::post('/properties/{id}/lists/create/',[ListController::class, 'store']);
 Route::get('/properties/lists/{pid}/edit/{lid}',[ListController::class, 'edit']);
 Route::put('/properties/lists/{pid}/edit/{lid}',[ListController::class, 'update']);
 Route::delete('/properties/{pid}/lists/{lid}/delete',[ListController::class, 'destroy']);
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
