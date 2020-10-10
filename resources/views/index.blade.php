@@ -68,7 +68,7 @@
   </div>
 
 
-  <div class="site-section" id="properties-section">3
+  <div class="site-section" id="properties-section">
       <div class="container">
         <div class="row large-gutters">
 
@@ -78,15 +78,13 @@
                     <div class="ftco-media-1-inner">
                       <a href="/properties/{{ $property->id }}" class="d-inline-block mb-4"><img height="520" src="{{ $property->img }}" alt="FImageo" class="img-fluid"></a>
                       <div class="ftco-media-details">
-                        <h3>{{ $property->name }}</h3>PH
-1
-
+                        <h3>{{ $property->name }}</h3>
                         <p>{{ substr($property->description,0,60) }}...</p>
                         <strong>P{{ $property->price }}</strong>
                       </div>
                     </div>
                   </div>
-                </div>R
+                </div>
             @endforeach
 
         </div>
