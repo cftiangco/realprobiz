@@ -8,34 +8,29 @@
 
     <div class="col-sm-10">
       <div style="float:right;">
-        <a href="/new" class="btn btn-primary btn-sm">New Property</a>
+        <a href="/properties/{{ $id }}/list/create" class="btn btn-primary btn-sm">Add New Image</a>
       </div>
       <table class="table table-bordered mt-5">
         <thead class="thead">
           <tr>
-            <th scope="col">Property Name</th>
-            <th scope="col">Location</th>
-            <th scope="col">Price</th>
-            <th scope="col">Description</th>
+            <th scope="col">Order</th>
             <th scope="col">Image</th>
-            <th scope="col"></th>
+            <th></th>
+            <th></th>
           </tr>
         </thead>
         <tbody>
-          @foreach($properties as $property)
+          @foreach($lists as $list)
           <tr>
-            <td>{{ $property->name }}</td>
-            <td>{{ $property->location }}</td>
-            <td>{{ $property->price }}</td>
-            <td>{{ $property->description }}</td>
+            <td>{{ $list->order }}</td>
             <td>
-              <img src="{{ $property->img }}" alt="properties" width="200">
+              <img src="{{ $list->img }}" alt="{{ $list->img }}" width="200">
             </td>
             <td>
-              <a href="/properties/edit/{{ $property->id }}" class="btn btn-warning">Edit</a>
+              <a href="/properties/lists/{{ $id }}/edit/{{ $list->id }}" class="btn btn-warning">Edit</a>
             </td>
             <td>
-              <form action="/properties/{{ $property->id }}" method="POST">
+              <form action="/properties/{{ $id }}/lists/{{ $list->id }}/delete" method="POST">
                 @csrf
                 @method('delete')
                 <button type="submit" class="btn btn-danger">Delete</button>

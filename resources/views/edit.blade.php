@@ -29,30 +29,17 @@
      </div>
 
       <div class="form-group">
-        <label for="description">Description</labe          <span> Current I</span>l>
+        <label for="description">Description</label>
         <textarea class="form-control" id="description" rows="3" name="description">{{ $property->description }}</textarea>
       </div>
 
       <div class="form-group">
-      <div class="row">
-
-        <div class="col-sm-6">
-          <label for="fileupload">Display Image</label>
-          <input type="file" class="form-control" id="fileupload" name="fileupload" style="width:320px;height:45px">
-        </div>
-
-        <div class="col-sm-6">
-          <a href="/uploads/{{ $property->img }}" target="_blank">
-            <img src="/uploads/{{ $property->img }}" alt="properties" width="100" style="border:3px solid black;">
-          </a>
-          <span> - {{ $property->img }}</span>
-        </div>
-
-      </div>
-
-      </div>
+       <label for="image">Display Image</label>
+       <input type="text" class="form-control" id="image" placeholder="Image URL" name="image" value=" {{ $property->img }}">
+     </div>
 
      <button type="submit" class="btn btn-primary">Update</button>
+     <a href="/properties/lists/{{ $property->id }}" class="btn btn-warning">Add of List Images</a>
 
     </form>
     </div>

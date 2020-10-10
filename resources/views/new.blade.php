@@ -9,16 +9,14 @@
     <div class="col-sm-3"></div>
 
     <div class="col-sm-6">
-      <form method="POST" action="/properties" enctype="multipart/form-data">
-
+      <form method="POST" action="/properties">
         @csrf
-
       <div class="form-group">
          <label for="name">Property Name</label>
          <input type="text" class="form-control" id="name" placeholder="Name" name="name">
        </div>
 
-      <div class="form-group">    <div class="col-sm-3"></div>
+      <div class="form-group">
         <label for="location">Location</label>
         <input type="text" class="form-control" id="location" placeholder="Location" name="location">
       </div>
@@ -34,8 +32,8 @@
       </div>
 
       <div class="form-group">
-       <label for="fileupload">Display Image</label>
-       <input type="file" class="form-control" id="fileupload" placeholder="Image" name="fileupload">
+       <label for="image">Display Image</label>
+       <input type="text" class="form-control" id="image" placeholder="Image URL" name="image">
      </div>
 
      <button type="submit" class="btn btn-primary">Save</button>
