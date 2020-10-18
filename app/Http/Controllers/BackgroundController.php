@@ -7,6 +7,11 @@ use App\Images;
 
 class BackgroundController extends Controller
 {
+  public function __construct()
+  {
+      $this->middleware('auth');
+  }
+  
   public function index() {
     $images = Images::all();
     return view('background.index',compact('images'));
