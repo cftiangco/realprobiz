@@ -27,7 +27,7 @@ class ContentController extends Controller
           'email_us' => 'required',
           'address' => 'required',
       ]);
-      
+
       $content = $contents->find($request->id);
       $content->headline = $request->headline;
       $content->sub_headline = $request->sub_headline;

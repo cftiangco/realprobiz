@@ -19,7 +19,7 @@
             </div>
             <br>
             <div class="row">
-              <div class="col-sm-6">
+              <div class="col-sm-6 mt-3">
                 <div class="card">
                   <div class="card-body">
                     <h5 class="card-title">Manage Properties</h5>
@@ -28,7 +28,7 @@
                   </div>
                 </div>
               </div>
-              <div class="col-sm-6">
+              <div class="col-sm-6 mt-3">
                 <div class="card">
                   <div class="card-body">
                     <h5 class="card-title">Content Option</h5>
@@ -37,6 +37,17 @@
                   </div>
                 </div>
               </div>
+
+              <div class="col-sm-6 mt-3">
+                <div class="card">
+                  <div class="card-body">
+                    <h5 class="card-title">Background Images</h5>
+                    <p class="card-text">Change your Background images</p>
+                    <a href="/background" class="btn btn-primary">Go To Background Setting</a>
+                  </div>
+                </div>
+              </div>
+
             </div>
 
         </div>

@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PropertiesController;
 use App\Http\Controllers\ListController;
 use App\Http\Controllers\ContentController;
+use App\Http\Controllers\BackgroundController;
 use App\Contents;
 use Illuminate\Http\Request;
 
@@ -28,6 +29,10 @@ Route::get('/sendmail',function(Request $request) {
 /* CONTENTS */
 Route::get('/contents',[ContentController::class, 'index']);
 Route::put('/contents',[ContentController::class, 'update']);
+
+/* BACKGROUND */
+Route::get('/background',[BackgroundController::class, 'index']);
+Route::put('/background',[BackgroundController::class, 'update']);
 
 /* INDEX PROPERTIES */
 Route::get('/',[PropertiesController::class, 'index']);

@@ -33,9 +33,8 @@
             <td></td>
             <td></td>
           </tr>
-      <div class="site-blocks-cover overlay overlay-2" style="background-image: url({{asset('warehouse/images/gov-place-1.jpg') }});" data-aos="fade" id="home-section">
-
-
+      @foreach($images as $image)
+      <div class="site-blocks-cover overlay overlay-2" style="background-image: url({{ $image->img }});" data-aos="fade" id="home-section">
         <div class="container">
           <div class="row align-items-center justify-content-center">
             <div class="col-md-6 mt-lg-5 text-center">
@@ -45,12 +44,9 @@
             </div>
           </div>
         </div>
-
-
       </div>
-      <div class="site-blocks-cover overlay overlay-2" style="background-image: url({{ asset('warehouse/images/robinsons-back.jpg') }});" data-aos="fade" id="home-section">
-
-
+      @endforeach
+      <!-- <div class="site-blocks-cover overlay overlay-2" style="background-image: url({{ asset('warehouse/images/robinsons-back.jpg') }});" data-aos="fade" id="home-section">
         <div class="container">
           <div class="row align-items-center justify-content-center">
             <div class="col-md-6 mt-lg-5 text-center">
@@ -60,10 +56,9 @@
             </div>
           </div>
         </div>
-
-
       </div>
-    </div>
+
+    </div> -->
 
   </div>
 
